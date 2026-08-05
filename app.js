@@ -99,3 +99,9 @@ function readLaw(id){
     alert("Opening Law ID : " + id);
 
 }
+
+function readLaw(id){
+
+    window.location.href = `law.html?id=${id}`;
+
+}

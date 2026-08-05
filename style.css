@@ -141,3 +141,35 @@ button:hover{
     background:#0b4da2;
 
 }
+
+.law-page{
+
+    padding:20px;
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.law-page h2{
+
+    color:#002147;
+
+    margin-bottom:10px;
+
+}
+
+.law-page h4{
+
+    color:#555;
+
+}
+
+.law-page p{
+
+    line-height:1.8;
+
+    margin-top:10px;
+
+}
