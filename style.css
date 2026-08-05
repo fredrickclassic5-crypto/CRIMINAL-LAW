@@ -52,3 +52,70 @@ header input{
 .card:hover{
     transform:translateY(-5px);
 }
+
+.top-bar{
+    background:#002147;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+#menuBtn{
+    background:none;
+    border:none;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.hero{
+    background:#d4af37;
+    color:#002147;
+    padding:30px 20px;
+    text-align:center;
+}
+
+.hero h2{
+    font-size:32px;
+}
+
+.hero p{
+    margin:10px 0 20px;
+}
+
+.hero input{
+    width:100%;
+    max-width:600px;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    background:#002147;
+    display:flex;
+    justify-content:space-around;
+    padding:10px 0;
+}
+
+.bottom-nav button{
+    background:none;
+    color:white;
+    border:none;
+    font-size:14px;
+    cursor:pointer;
+}
