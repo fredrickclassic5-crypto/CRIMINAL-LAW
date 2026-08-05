@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "section": "Section 1",
+    "title": "Murder",
+    "content": "The full legal text goes here..."
+  },
+  {
+    "id": 2,
+    "section": "Section 2",
+    "title": "Stealing",
+    "content": "The full legal text goes here..."
+  }
+]

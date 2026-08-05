@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Criminal Offences Act, 1960 (Act 29)",
+    "file": "act29.json"
+  },
+  {
+    "id": 2,
+    "name": "Criminal and Other Offences (Procedure) Act, 1960 (Act 30)",
+    "file": "act30.json"
+  },
+  {
+    "id": 3,
+    "name": "Evidence Act, 1975 (NRCD 323)",
+    "file": "evidence.json"
+  }
+]

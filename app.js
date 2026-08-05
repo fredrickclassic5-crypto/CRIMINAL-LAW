@@ -105,3 +105,31 @@ function readLaw(id){
     window.location.href = `law.html?id=${id}`;
 
 }
+
+const container = document.getElementById("lawContainer");
+
+fetch("data/acts.json")
+.then(res => res.json())
+.then(acts => {
+
+    acts.forEach(act => {
+
+        container.innerHTML += `
+
+        <div class="card" onclick="openAct('${act.file}')">
+
+            <h2>${act.name}</h2>
+
+        </div>
+
+        `;
+
+    });
+
+});
+
+function openAct(file){
+
+    window.location.href = `search.html?file=${file}`;
+
+}
