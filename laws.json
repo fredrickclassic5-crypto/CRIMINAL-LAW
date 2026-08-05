@@ -15,3 +15,27 @@
         "content":"A person commits stealing when..."
     }
 ]
+
+[
+  {
+    "id": 1,
+    "act": "Criminal Offences Act, 1960 (Act 29)",
+    "section": "Section 1",
+    "title": "Murder",
+    "content": "A person commits murder when..."
+  },
+  {
+    "id": 2,
+    "act": "Criminal Offences Act, 1960 (Act 29)",
+    "section": "Section 2",
+    "title": "Stealing",
+    "content": "A person commits stealing when..."
+  },
+  {
+    "id": 3,
+    "act": "Criminal Offences Act, 1960 (Act 29)",
+    "section": "Section 3",
+    "title": "Assault",
+    "content": "A person commits assault when..."
+  }
+]

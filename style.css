@@ -119,3 +119,25 @@ header input{
     font-size:14px;
     cursor:pointer;
 }
+
+button{
+
+    background:#002147;
+
+    color:white;
+
+    padding:10px 20px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+button:hover{
+
+    background:#0b4da2;
+
+}
