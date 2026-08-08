@@ -1,96 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghana Criminal Laws</title>
 
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Dashboard</title>
-
-<link rel="stylesheet"
-href="css/style.css">
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <header class="top-bar">
 
-<h1>🇬🇭 Ghana Criminal Laws</h1>
+    <button id="menuBtn">☰</button>
+
+    <div class="logo">
+         Ghana Criminal Laws
+    </div>
+
+    <div class="user">
+        👮 Ghana Police Edition
+    </div>
 
 </header>
 
-<div class="dashboard">
+<nav id="sideMenu" class="side-menu">
 
-<div class="dashboard-card">
+    <a href="dashboard.html">🏠 Dashboard</a>
+    <a href="global-search.html">🔍 Search All Laws</a>
+    <a href="bookmark.html">⭐ Bookmarks</a>
+    <a href="ai.html">🤖 AI Assistant</a>
+    <a href="settings.html">⚙️ Settings</a>
+    <a href="about.html">ℹ️ About</a>
 
-📚
+</nav>
 
-<h2>Acts</h2>
+<section class="hero">
 
-<p>Browse all criminal laws.</p>
+    <h1>Welcome</h1>
 
-<button onclick="location.href='search.html'">
+    <p>Professional Legal Reference for Ghana</p>
 
-Open
+    <input
+        type="search"
+        id="searchInput"
+        placeholder="Search all laws...">
 
-</button>
+</section>
 
-</div>
+<div class="dashboard"></div>
 
-<div class="dashboard-card">
-
-⭐
-
-<h2>Bookmarks</h2>
-
-<p>Your saved sections.</p>
-
-<button onclick="location.href='bookmarks.html'">
-
-Open
-
-</button>
-
-</div>
-
-<div class="dashboard-card">
-
-🤖
-
-<h2>AI Assistant</h2>
-
-<p>Ask legal questions.</p>
-
-<button onclick="location.href='ai.html'">
-
-Open
-
-</button>
-
-</div>
-
-<div class="dashboard-card">
-
-⚙️
-
-<h2>Settings</h2>
-
-<p>Customize your app.</p>
-
-<button onclick="location.href='settings.html'">
-
-Open
-
-</button>
-
-</div>
-
-</div>
+<script src="js/dashboard.js"></script>
+<script src="js/menu.js"></script>
 
 </body>
-
 </html>

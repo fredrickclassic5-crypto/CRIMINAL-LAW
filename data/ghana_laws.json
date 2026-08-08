@@ -1,0 +1,37 @@
+{
+  "acts": [
+    {
+      "id": 29,
+      "title": "Criminal Offences Act, 1960 (Act 29)",
+      "year": 1960,
+      "chapters": [
+        {
+          "title": "Offences Against the Person",
+          "sections": [
+            {
+              "id": 1,
+              "section": "Section 1",
+              "title": "Murder",
+              "keywords": ["murder", "homicide", "killing"],
+              "content": "Full legal text goes here..."
+            },
+            {
+              "id": 2,
+              "section": "Section 2",
+              "title": "Manslaughter",
+              "keywords": ["manslaughter", "death"],
+              "content": "Full legal text goes here..."
+            },
+            {
+              "id": 3,
+              "section": "Section 3",
+              "title": "Stealing",
+              "keywords": ["stealing", "theft", "property"],
+              "content": "Full legal text goes here..."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

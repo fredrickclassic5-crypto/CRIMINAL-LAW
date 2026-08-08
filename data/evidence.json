@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "section": "Section 1",
+    "title": "Murder",
+    "content": "A person who intentionally causes the death of another person commits the offence of murder."
+  },
+  {
+    "id": 2,
+    "section": "Section 2",
+    "title": "Manslaughter",
+    "content": "A person who unlawfully causes the death of another person without malice commits manslaughter."
+  },
+  {
+    "id": 3,
+    "section": "Section 3",
+    "title": "Stealing",
+    "content": "A person who dishonestly appropriates property belonging to another commits stealing."
+  }
+]

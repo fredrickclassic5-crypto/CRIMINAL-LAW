@@ -1,0 +1,400 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+    color:#333;
+}
+
+.top-bar{
+    background:#002147;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 25px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.user{
+    font-size:15px;
+}
+
+.user{
+    font-size:16px;
+}
+
+.hero{
+    background:#d4a017;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.hero h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.hero input{
+    width:80%;
+    max-width:650px;
+    padding:18px;
+    border:none;
+    border-radius:40px;
+    font-size:18px;
+    outline:none;
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:25px;
+}
+
+.dashboard-card{
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    cursor:pointer;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-8px);
+}
+
+.icon{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.dashboard-card h2{
+    color:#002147;
+    margin:15px 0;
+}
+
+.dashboard-card p{
+    color:#777;
+}
+textarea{
+
+width:100%;
+
+height:150px;
+
+padding:15px;
+
+font-size:16px;
+
+border-radius:10px;
+
+border:1px solid #ccc;
+
+margin-bottom:20px;
+
+resize:none;
+
+}
+
+#answer{
+
+margin-top:25px;
+
+background:white;
+
+padding:20px;
+
+border-radius:10px;
+
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+}
+.law-content{
+    max-width:900px;
+    margin:30px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+    line-height:1.8;
+    font-size:18px;
+}
+
+#bookmarkBtn{
+    margin-top:30px;
+    padding:15px 30px;
+    background:#002147;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+#bookmarkBtn:hover{
+    background:#003d80;
+}
+.reader-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.reader-buttons button{
+    padding:14px 22px;
+    border:none;
+    border-radius:10px;
+    background:#002147;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+.reader-buttons button:hover{
+    background:#004080;
+}
+#menuBtn{
+    background:none;
+    border:none;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.side-menu{
+    position:fixed;
+    top:0;
+    left:-260px;
+    width:250px;
+    height:100%;
+    background:#002147;
+    transition:left .3s ease;
+    padding-top:70px;
+    z-index:2000;
+}
+
+.side-menu.open{
+    left:0;
+}
+
+.side-menu a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:15px 20px;
+    font-size:18px;
+}
+
+.side-menu a:hover{
+    background:#003366;
+}
+.dark-mode{
+    background:#121212;
+    color:white;
+}
+
+.dark-mode .dashboard-card,
+.dark-mode .law-content{
+    background:#1f1f1f;
+    color:white;
+}
+
+.dark-mode .top-bar{
+    background:#000;
+}
+
+.dark-mode .hero{
+    background:#333;
+}
+
+.dark-mode button{
+    background:#444;
+}
+.splash-page{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#002147;
+    color:white;
+}
+
+.splash{
+    text-align:center;
+}
+
+.logo-image{
+    width:120px;
+    height:120px;
+    margin-bottom:20px;
+}
+
+.loader{
+    width:50px;
+    height:50px;
+    margin:30px auto;
+    border:5px solid white;
+    border-top:5px solid gold;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+/* Side Menu */
+.side-menu{
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 250px;
+    height: 100%;
+    background: #002147;
+    padding-top: 70px;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.side-menu.open{
+    left: 0;
+}
+
+.side-menu a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-size: 18px;
+}
+
+.side-menu a:hover{
+    background: #d4a017;
+}
+
+#menuBtn{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+.law-content{
+    background:white;
+    margin:20px;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    line-height:1.8;
+    font-size:18px;
+}
+
+.reader-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin:20px;
+}
+
+.reader-buttons button{
+    background:#002147;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.reader-buttons button:hover{
+    background:#004080;
+}
+.ai-container{
+
+    width:90%;
+    max-width:800px;
+
+    margin:30px auto;
+
+}
+
+#question{
+
+    width:100%;
+
+    height:120px;
+
+    padding:15px;
+
+    font-size:18px;
+
+    border-radius:10px;
+
+}
+
+#askBtn{
+
+    margin-top:15px;
+
+    width:100%;
+
+    padding:15px;
+
+    background:#002147;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+#answer{
+
+    margin-top:20px;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    min-height:120px;
+
+}
+.reader-buttons button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}

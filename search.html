@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Law Sections</title>
+<title>Law Reader</title>
 
 <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
 
 <header class="top-bar">
 
-<h2 id="actTitle">Law Sections</h2>
+<div class="logo">
+ Ghana Criminal Laws
+</div>
 
 </header>
 
-<input
-id="searchInput"
-placeholder="Search sections..."
->
+<section class="hero">
 
-<div id="lawContainer" class="cards"></div>
+<h1>Law Reader</h1>
 
+<p>Select a section to read.</p>
+
+</section>
+
+<div id="lawList" class="dashboard"></div>
+
+<script src="js/database.js"></script>
 <script src="js/search.js"></script>
 
 </body>
-
 </html>
