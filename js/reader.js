@@ -93,11 +93,42 @@ function displayLaw() {
         currentLaw.text ??
         "";
 
-    // IMPORTANT:
-    // The JSON already contains "Section 1",
-    // so do NOT add another "Section ".
+
+    // ========================================
+    // FIX SECTION DISPLAY
+    // ========================================
+
+    let sectionDisplay = "";
+
+    if (section !== "") {
+
+        const sectionText = String(section).trim();
+
+        // If JSON already says "Section 1",
+        // keep it exactly as it is.
+        if (
+            sectionText
+                .toLowerCase()
+                .startsWith("section")
+        ) {
+
+            sectionDisplay = sectionText;
+
+        } else {
+
+            // If JSON only contains "1",
+            // convert it to "Section 1".
+            sectionDisplay = "Section " + sectionText;
+        }
+    }
+
+
+    // ========================================
+    // DISPLAY LAW
+    // ========================================
+
     document.getElementById("sectionTitle").textContent =
-        section;
+        sectionDisplay;
 
     document.getElementById("lawTitle").textContent =
         title;
@@ -122,10 +153,13 @@ function updateNavigation() {
         document.getElementById("nextBtn");
 
     if (prevBtn) {
-        prevBtn.disabled = currentIndex <= 0;
+
+        prevBtn.disabled =
+            currentIndex <= 0;
     }
 
     if (nextBtn) {
+
         nextBtn.disabled =
             currentIndex >= laws.length - 1;
     }
@@ -246,11 +280,39 @@ if (pdfBtn) {
             return;
         }
 
-        const pdfName =
-            file.replace(".json", ".pdf");
+        /*
+         * Example:
+         *
+         * act29.json
+         * becomes
+         * act29.json.pdf
+         *
+         * if that is the actual filename in your PDF folder.
+         */
+
+        let pdfName;
+
+        if (file === "act29.json") {
+
+            pdfName = "act29.json.pdf";
+
+        } else if (file === "act30.json") {
+
+            pdfName = "act30.pdf.pdf";
+
+        } else {
+
+            pdfName =
+                file.replace(".json", ".pdf");
+        }
+
+        const pdfPath =
+            "pdf/" + pdfName;
+
+        console.log("Opening PDF:", pdfPath);
 
         window.open(
-            "pdf/" + pdfName,
+            pdfPath,
             "_blank"
         );
 
@@ -279,17 +341,20 @@ if (readBtn) {
 
         window.speechSynthesis.cancel();
 
+
         const section =
             currentLaw.section ??
             currentLaw.sectionNumber ??
             currentLaw.number ??
             "";
 
+
         const title =
             currentLaw.title ??
             currentLaw.name ??
             currentLaw.heading ??
             "";
+
 
         const content =
             currentLaw.content ??
@@ -298,21 +363,53 @@ if (readBtn) {
             currentLaw.text ??
             "";
 
+
+        // Create proper section wording
+        let sectionSpeech = "";
+
+        if (section !== "") {
+
+            const sectionText =
+                String(section).trim();
+
+            if (
+                sectionText
+                    .toLowerCase()
+                    .startsWith("section")
+            ) {
+
+                sectionSpeech = sectionText;
+
+            } else {
+
+                sectionSpeech =
+                    "Section " + sectionText;
+            }
+        }
+
+
         const speechText =
-            section +
+            sectionSpeech +
             ". " +
             title +
             ". " +
             content;
 
+
         const speech =
-            new SpeechSynthesisUtterance(speechText);
+            new SpeechSynthesisUtterance(
+                speechText
+            );
+
 
         speech.rate = 0.9;
         speech.pitch = 1;
         speech.volume = 1;
 
-        window.speechSynthesis.speak(speech);
+
+        window.speechSynthesis.speak(
+            speech
+        );
 
     });
 }

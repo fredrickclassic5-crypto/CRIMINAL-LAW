@@ -4,28 +4,54 @@ const file = params.get("file");
 const lawList = document.getElementById("lawList");
 
 fetch("data/" + file)
-.then(response => response.json())
-.then(data => {
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Could not load " + file);
+        }
 
-    lawList.innerHTML = "";
+        return response.json();
+    })
+    .then(data => {
 
-    data.forEach((law, index) => {
+        lawList.innerHTML = "";
 
-        lawList.innerHTML += `
+        data.forEach((law, index) => {
 
-        <div class="dashboard-card"
-             onclick="location.href='reader.html?file=${file}&id=${law.id}'"
+            // Get the section number safely
+            const section =
+                law.section ??
+                law.sectionNumber ??
+                law.number ??
+                (index + 1);
 
-            <h2>${law.section}</h2>
+            // Prevent "Section Section 1"
+            const sectionText =
+                String(section).toLowerCase().startsWith("section")
+                    ? section
+                    : "Section " + section;
 
-            <h3>${law.title}</h3>
+            lawList.innerHTML += `
+                <div class="dashboard-card"
+                    onclick="location.href='reader.html?file=${encodeURIComponent(file)}&id=${encodeURIComponent(law.id)}'">
 
-            <p>Click to read</p>
+                    <h2>${sectionText}</h2>
 
-        </div>
+                    <h3>${law.title || law.name || law.heading || ""}</h3>
 
+                    <p>Click to read</p>
+
+                </div>
+            `;
+        });
+
+    })
+    .catch(error => {
+
+        console.error("Search error:", error);
+
+        lawList.innerHTML = `
+            <p style="color:red;">
+                ${error.message}
+            </p>
         `;
-
     });
-
-});
