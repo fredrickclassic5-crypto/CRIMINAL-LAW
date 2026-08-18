@@ -1,57 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b1f3a"
+    >
+
     <title>Ghana Criminal Laws</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
 </head>
 
-<body>
 
-<header class="top-bar">
+<body class="modern-dashboard">
 
-    <button id="menuBtn">☰</button>
 
-    <div class="logo">
-         Ghana Criminal Laws
+<!-- ========================================
+     HEADER
+======================================== -->
+
+<header class="modern-header">
+
+    <button
+        id="menuBtn"
+        class="menu-button"
+        type="button"
+    >
+        ☰
+    </button>
+
+
+    <div class="modern-brand">
+
+        <div class="brand-icon">
+            ⚖️
+        </div>
+
+        <div>
+
+            <strong>
+                Ghana Criminal Laws
+            </strong>
+
+            <small>
+                Legal Reference
+            </small>
+
+        </div>
+
     </div>
 
-    <div class="user">
-        👮 Ghana Police Edition
+
+    <div class="header-user">
+        ⚖️
     </div>
 
 </header>
 
-<nav id="sideMenu" class="side-menu">
 
-    <a href="dashboard.html">🏠 Dashboard</a>
-    <a href="global-search.html">🔍 Search All Laws</a>
-    <a href="bookmark.html">⭐ Bookmarks</a>
-    <a href="ai.html">🤖 AI Assistant</a>
-    <a href="settings.html">⚙️ Settings</a>
-    <a href="about.html">ℹ️ About</a>
+
+<!-- ========================================
+     SIDE MENU
+======================================== -->
+
+<nav
+    id="sideMenu"
+    class="side-menu"
+>
+
+    <div class="menu-header">
+
+        <div class="brand-icon">
+            ⚖️
+        </div>
+
+        <strong>
+            Ghana Criminal Laws
+        </strong>
+
+    </div>
+
+
+    <a href="dashboard.html">
+        🏠
+        <span>Dashboard</span>
+    </a>
+
+
+    <a href="global-search.html">
+        🔍
+        <span>Search All Laws</span>
+    </a>
+
+
+    <a href="bookmark.html">
+        ⭐
+        <span>Bookmarks</span>
+    </a>
+
+
+    <a href="ai.html">
+        🤖
+        <span>AI Legal Assistant</span>
+    </a>
+
+
+    <a href="settings.html">
+        ⚙️
+        <span>Settings</span>
+    </a>
 
 </nav>
 
-<section class="hero">
 
-    <h1>Welcome</h1>
 
-    <p>Professional Legal Reference for Ghana</p>
+<!-- ========================================
+     MAIN CONTENT
+======================================== -->
 
-    <input
-        type="search"
-        id="searchInput"
-        placeholder="Search all laws...">
+<main class="modern-main">
 
-</section>
 
-<div class="dashboard"></div>
+    <!-- WELCOME -->
+
+    <section class="welcome-section">
+
+        <p class="welcome-label">
+            GHANA LEGAL REFERENCE
+        </p>
+
+
+        <h1>
+            Welcome 👋
+        </h1>
+
+
+        <p class="welcome-text">
+            Search, read and explore Ghanaian
+            criminal laws in one place.
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================
+         SEARCH
+    ====================================== -->
+
+    <section class="modern-search">
+
+        <span class="search-icon">
+            🔍
+        </span>
+
+
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="Search Ghana laws..."
+            autocomplete="off"
+        >
+
+
+        <button
+            id="globalSearchBtn"
+            type="button"
+        >
+            →
+        </button>
+
+    </section>
+
+
+
+    <!-- =====================================
+         LEGAL RESOURCES
+    ====================================== -->
+
+    <section class="quick-section">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                QUICK ACCESS
+            </p>
+
+
+            <h2>
+                Legal Resources
+            </h2>
+
+        </div>
+
+
+        <!--
+            dashboard.js will automatically
+            create the Act 29, Act 30 and
+            Evidence Act cards here.
+        -->
+
+        <div
+            id="dashboard"
+            class="modern-dashboard-grid"
+        >
+
+            <div class="loading-card">
+
+                <div class="loading-icon">
+                    ⚖️
+                </div>
+
+                <p>
+                    Loading Ghana laws...
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         AI LEGAL ASSISTANT
+    ====================================== -->
+
+    <section class="ai-promo">
+
+        <div class="ai-promo-icon">
+            🤖
+        </div>
+
+
+        <div class="ai-promo-content">
+
+            <p class="section-label">
+                SMART LEGAL ASSISTANCE
+            </p>
+
+
+            <h2>
+                Ask Ghana Legal AI
+            </h2>
+
+
+            <p>
+                Search the law database and find
+                relevant legal provisions quickly.
+            </p>
+
+
+            <a
+                href="ai.html"
+                class="ai-promo-button"
+            >
+                Ask AI →
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ========================================
+     BOTTOM NAVIGATION
+======================================== -->
+
+<nav class="bottom-navigation">
+
+    <a
+        href="dashboard.html"
+        class="active"
+    >
+
+        <span>
+            🏠
+        </span>
+
+        <small>
+            Home
+        </small>
+
+    </a>
+
+
+    <a href="global-search.html">
+
+        <span>
+            🔍
+        </span>
+
+        <small>
+            Search
+        </small>
+
+    </a>
+
+
+    <a href="ai.html">
+
+        <span>
+            🤖
+        </span>
+
+        <small>
+            AI
+        </small>
+
+    </a>
+
+
+    <a href="bookmark.html">
+
+        <span>
+            ⭐
+        </span>
+
+        <small>
+            Saved
+        </small>
+
+    </a>
+
+</nav>
+
+
+
+<!-- ========================================
+     JAVASCRIPT
+======================================== -->
 
 <script src="js/dashboard.js"></script>
+
 <script src="js/menu.js"></script>
 
+
+<script>
+
+const searchInput =
+    document.getElementById("searchInput");
+
+
+const globalSearchBtn =
+    document.getElementById(
+        "globalSearchBtn"
+    );
+
+
+function performSearch() {
+
+    if (!searchInput) {
+        return;
+    }
+
+
+    const query =
+        searchInput.value.trim();
+
+
+    if (!query) {
+
+        searchInput.focus();
+
+        return;
+
+    }
+
+
+    window.location.href =
+        "global-search.html?q=" +
+        encodeURIComponent(query);
+
+}
+
+
+if (globalSearchBtn) {
+
+    globalSearchBtn.addEventListener(
+        "click",
+        performSearch
+    );
+
+}
+
+
+if (searchInput) {
+
+    searchInput.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "Enter") {
+
+                event.preventDefault();
+
+                performSearch();
+
+            }
+
+        }
+    );
+
+}
+
+</script>
+
+
 </body>
+
 </html>

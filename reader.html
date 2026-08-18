@@ -1,68 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Law Reader</title>
 
-    <link rel="stylesheet" href="css/style.css">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#071f3d"
+    >
+
+    <title>
+        Legal Provision | Ghana Criminal Laws
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
 </head>
 
-<body>
 
-<header class="top-bar">
+<body class="modern-dashboard">
 
-    <button onclick="history.back()">⬅ Back</button>
 
-    <div class="logo">
-        Ghana Criminal Laws
+<!-- ========================================
+     HEADER
+======================================== -->
+
+<header class="modern-header">
+
+    <a
+        href="javascript:history.back()"
+        class="back-button"
+        aria-label="Go back"
+    >
+        ←
+    </a>
+
+
+    <div class="modern-brand">
+
+        <div class="brand-icon">
+            ⚖️
+        </div>
+
+
+        <div class="brand-text">
+
+            <strong>
+                Ghana Criminal Laws
+            </strong>
+
+            <small>
+                Legal Provision
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div class="header-badge">
+        ⚖
     </div>
 
 </header>
 
-<section class="hero">
 
-    <h2 id="sectionTitle"></h2>
 
-    <p id="lawTitle"></p>
+<!-- ========================================
+     MAIN
+======================================== -->
 
-</section>
+<main class="modern-main">
 
-<div class="law-content">
 
-    <p id="lawText"></p>
+    <!-- ====================================
+         READER
+    ===================================== -->
 
-</div>
+    <section
+        id="lawReader"
+        class="law-reader"
+    >
 
-<div class="reader-buttons">
+        <div class="loading-card">
 
-    <button id="prevBtn">
-        ⬅ Previous
-    </button>
+            <div class="loading-icon">
+                ⚖️
+            </div>
 
-    <button id="bookmarkBtn">
-        ⭐ Bookmark
-    </button>
 
-    <button id="pdfBtn">
-        📄 Open Official PDF
-    </button>
+            <h3>
+                Loading Legal Provision
+            </h3>
 
-    <button id="readBtn">
-        🔊 Read Aloud
-    </button>
 
-    <button id="stopBtn">
-        ⏹ Stop
-    </button>
+            <p>
+                Please wait while the legal
+                provision is being loaded.
+            </p>
 
-    <button id="nextBtn">
-        Next ➡
-    </button>
+        </div>
 
-</div>
+    </section>
+
+
+</main>
+
+
+
+<!-- ========================================
+     JAVASCRIPT
+======================================== -->
 
 <script src="js/reader.js"></script>
 
+
 </body>
+
 </html>

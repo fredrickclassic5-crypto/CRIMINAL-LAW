@@ -1,53 +1,570 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>Search Laws</title>
+    <meta
+        name="theme-color"
+        content="#071f3d"
+    >
 
-<link rel="stylesheet"
-href="css/style.css">
+    <title>
+        Ghana Criminal Laws | Legal Search
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
 
 </head>
 
-<body>
 
-<header class="top-bar">
+<body class="modern-dashboard">
 
-<div class="logo">
 
-🔍 Search Ghana Laws
+<!-- ========================================
+     HEADER
+======================================== -->
 
-</div>
+<header class="modern-header">
+
+    <a
+        href="dashboard.html"
+        class="back-button"
+        aria-label="Back to dashboard"
+    >
+        ←
+    </a>
+
+
+    <div class="modern-brand">
+
+        <div class="brand-icon">
+            ⚖️
+        </div>
+
+
+        <div class="brand-text">
+
+            <strong>
+                Ghana Criminal Laws
+            </strong>
+
+            <small>
+                AI Legal Research
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div class="header-badge">
+        ⚖
+    </div>
 
 </header>
 
-<section class="hero">
 
-<input
 
-id="searchInput"
+<!-- ========================================
+     MAIN
+======================================== -->
 
-placeholder="Search any section, offence or Act..."
+<main class="modern-main">
 
->
 
-</section>
+    <!-- ====================================
+         INTRODUCTION
+    ===================================== -->
 
-<div
+    <section class="welcome-section">
 
-id="results"
+        <p class="welcome-label">
+            GHANA LEGAL DATABASE
+        </p>
 
-class="dashboard">
 
-</div>
+        <h1>
 
-<script src="js/global-search.js"></script>
+            Search the Law
+
+            <span>
+                🔎
+            </span>
+
+        </h1>
+
+
+        <p class="welcome-text">
+
+            Search Ghana's criminal law database
+            and find relevant legal provisions
+            quickly and accurately.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- ====================================
+         SEARCH BOX
+    ===================================== -->
+
+    <section
+        class="modern-search"
+        aria-label="Legal search"
+    >
+
+        <span
+            class="search-icon"
+            aria-hidden="true"
+        >
+            🔍
+        </span>
+
+
+        <input
+            type="search"
+            id="globalSearchInput"
+            placeholder="Ask about murder, stealing, robbery, bail..."
+            autocomplete="off"
+            spellcheck="false"
+            aria-label="Search Ghana laws"
+        >
+
+
+        <button
+            id="globalSearchButton"
+            type="button"
+            aria-label="Search Ghana laws"
+        >
+            →
+        </button>
+
+    </section>
+
+
+
+    <!-- ====================================
+         SEARCH HINTS
+    ===================================== -->
+
+    <div class="search-hints">
+
+        <span>
+            Try:
+        </span>
+
+
+        <button
+            type="button"
+            class="search-hint"
+            data-search="What is murder?"
+        >
+            Murder
+        </button>
+
+
+        <button
+            type="button"
+            class="search-hint"
+            data-search="What is stealing?"
+        >
+            Stealing
+        </button>
+
+
+        <button
+            type="button"
+            class="search-hint"
+            data-search="What is robbery?"
+        >
+            Robbery
+        </button>
+
+
+        <button
+            type="button"
+            class="search-hint"
+            data-search="What is bail?"
+        >
+            Bail
+        </button>
+
+
+        <button
+            type="button"
+            class="search-hint"
+            data-search="What is assault?"
+        >
+            Assault
+        </button>
+
+    </div>
+
+
+
+    <!-- ====================================
+         SEARCH STATUS
+    ===================================== -->
+
+    <div
+        id="searchStatus"
+        aria-live="polite"
+    ></div>
+
+
+
+    <!-- ====================================
+         AI LEGAL ANSWER
+    ===================================== -->
+
+    <section
+        id="aiLegalAnswer"
+        class="ai-legal-answer"
+        style="display:none;"
+        aria-live="polite"
+    >
+
+        <!--
+            JavaScript inserts the AI
+            legal answer here.
+        -->
+
+    </section>
+
+
+
+    <!-- ====================================
+         LAW FILTERS
+    ===================================== -->
+
+    <section class="law-filter-section">
+
+        <div class="section-label">
+            FILTER DATABASE
+        </div>
+
+
+        <div class="law-filters">
+
+            <button
+                class="law-filter active"
+                data-filter="all"
+                type="button"
+            >
+                All Laws
+            </button>
+
+
+            <button
+                class="law-filter"
+                data-filter="act29.json"
+                type="button"
+            >
+                Act 29
+            </button>
+
+
+            <button
+                class="law-filter"
+                data-filter="act30.json"
+                type="button"
+            >
+                Act 30
+            </button>
+
+
+            <button
+                class="law-filter"
+                data-filter="evidence.json"
+                type="button"
+            >
+                Evidence Act
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ====================================
+         RESULTS HEADER
+    ===================================== -->
+
+    <div class="results-heading">
+
+        <div>
+
+            <p class="section-label">
+                LEGAL DATABASE
+            </p>
+
+
+            <h2>
+                Legal Provisions
+            </h2>
+
+        </div>
+
+
+        <p>
+            Search results will appear below.
+        </p>
+
+    </div>
+
+
+
+    <!-- ====================================
+         RESULTS
+    ===================================== -->
+
+    <section
+        id="globalSearchResults"
+        class="modern-dashboard-grid"
+        aria-live="polite"
+    >
+
+        <div class="loading-card">
+
+            <div class="loading-icon">
+                ⚖️
+            </div>
+
+
+            <h3>
+                Search Ghana Laws
+            </h3>
+
+
+            <p>
+                Enter a legal term above to
+                find relevant provisions.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ========================================
+     JAVASCRIPT
+======================================== -->
+
+<script src="js/globalsearch.js"></script>
+
+
+
+<script>
+
+/* ========================================
+   SEARCH HINT BUTTONS
+======================================== */
+
+document
+    .querySelectorAll(".search-hint")
+    .forEach(function(button) {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                const input =
+                    document.getElementById(
+                        "globalSearchInput"
+                    );
+
+
+                if (!input) {
+
+                    return;
+
+                }
+
+
+                input.value =
+                    button.dataset.search;
+
+
+                const searchButton =
+                    document.getElementById(
+                        "globalSearchButton"
+                    );
+
+
+                if (searchButton) {
+
+                    searchButton.click();
+
+                }
+
+            }
+        );
+
+    });
+
+
+
+/* ========================================
+   LAW FILTER BUTTONS
+======================================== */
+
+document
+    .querySelectorAll(".law-filter")
+    .forEach(function(button) {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+
+                /*
+                 * Remove active state
+                 * from all filters.
+                 */
+
+                document
+                    .querySelectorAll(".law-filter")
+                    .forEach(function(filter) {
+
+                        filter.classList.remove(
+                            "active"
+                        );
+
+                    });
+
+
+                /*
+                 * Activate selected filter.
+                 */
+
+                button.classList.add(
+                    "active"
+                );
+
+
+                /*
+                 * Tell globalsearch.js
+                 * which database to search.
+                 */
+
+                window.selectedLawFilter =
+                    button.dataset.filter;
+
+
+                /*
+                 * Search again if the
+                 * search box has text.
+                 */
+
+                const input =
+                    document.getElementById(
+                        "globalSearchInput"
+                    );
+
+
+                if (
+                    input &&
+                    input.value.trim()
+                ) {
+
+                    if (
+                        typeof searchLaws ===
+                        "function"
+                    ) {
+
+                        searchLaws();
+
+                    }
+
+                }
+
+            }
+        );
+
+    });
+
+
+
+/* ========================================
+   LOAD SEARCH FROM URL
+========================================
+
+Example:
+
+global-search.html?q=murder
+
+======================================== */
+
+const urlParams =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+const urlQuery =
+    urlParams.get("q");
+
+
+if (
+    urlQuery
+) {
+
+    const input =
+        document.getElementById(
+            "globalSearchInput"
+        );
+
+
+    if (input) {
+
+        input.value =
+            urlQuery;
+
+
+        /*
+         * Wait for globalsearch.js
+         * to finish loading.
+         */
+
+        setTimeout(
+            function() {
+
+                if (
+                    typeof searchLaws ===
+                    "function"
+                ) {
+
+                    searchLaws();
+
+                }
+
+            },
+            150
+        );
+
+    }
+
+}
+
+</script>
+
 
 </body>
 

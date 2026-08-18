@@ -1,47 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>AI Legal Assistant</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
 </head>
+
 
 <body>
 
+
 <header class="top-bar">
-    <h2>🤖 Ghana AI Legal Assistant</h2>
+
+    <button onclick="history.back()">
+        ⬅ Back
+    </button>
+
+    <h2>
+        🤖 Ghana AI Legal Assistant
+    </h2>
+
 </header>
+
 
 <section class="hero">
 
-    <h1>Ask the Law</h1>
+    <h1>
+        Ask the Law
+    </h1>
 
-    <p>Ask any question about Ghana Criminal Laws</p>
+    <p>
+        Ask any question about Ghana Criminal Laws
+    </p>
 
 </section>
 
+
 <div class="ai-container">
 
-    <textarea
-        id="question"
-        placeholder="Example: What is stealing?">
-    </textarea>
 
-    <button id="askBtn">
-        Ask AI
-    </button>
+    <!-- ============================= -->
+    <!-- QUESTION BOX -->
+    <!-- ============================= -->
 
-    <div id="answer">
+    <div class="ai-question">
 
-        Your answer will appear here.
+        <h2>
+            🤖 Ask a Legal Question
+        </h2>
+
+        <textarea
+            id="question"
+            placeholder="Example: What is stealing?"
+            rows="4"
+        ></textarea>
+
+        <button id="askBtn">
+            🔎 Ask AI
+        </button>
 
     </div>
 
+
+    <!-- ============================= -->
+    <!-- ANSWER -->
+    <!-- ============================= -->
+
+    <div
+        id="answer"
+        class="ai-answer"
+    >
+
+        <h2>
+            🤖 AI Answer
+        </h2>
+
+        <p>
+            Your answer will appear here.
+        </p>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- FOLLOW-UP QUESTION -->
+    <!-- ============================= -->
+
+    <div
+        id="followUpBox"
+        class="ai-question"
+        style="display:none;"
+    >
+
+        <h2>
+            💬 Ask a Follow-up Question
+        </h2>
+
+        <textarea
+            id="followUpQuestion"
+            placeholder="Ask another question about this law..."
+            rows="3"
+        ></textarea>
+
+        <button id="followUpBtn">
+            🔎 Ask Follow-up
+        </button>
+
+    </div>
+
+
 </div>
+
 
 <script src="js/ai.js"></script>
 
+
 </body>
+
 </html>

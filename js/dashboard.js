@@ -1,100 +1,218 @@
-const dashboard = document.querySelector(".dashboard");
+// ========================================
+// MODERN GHANA CRIMINAL LAWS DASHBOARD
+// ========================================
 
-fetch("data/acts.json")
-  .then(response => {
-    if (!response.ok) {
-      throw new Error("Unable to load acts.json");
+const dashboard =
+    document.getElementById("dashboard");
+
+
+// ========================================
+// LAW DATABASE
+// ========================================
+
+const lawDatabases = [
+
+    {
+        title: "Criminal Offences Act",
+        subtitle: "1960 (Act 29)",
+        file: "act29.json",
+        icon: "⚖️"
+    },
+
+    {
+        title: "Criminal and Other Offences",
+        subtitle: "Procedure Act, 1960 (Act 30)",
+        file: "act30.json",
+        icon: "🏛️"
+    },
+
+    {
+        title: "Evidence Act",
+        subtitle: "1975 (NRCD 323)",
+        file: "evidence.json",
+        icon: "📖"
     }
-    return response.json();
-  })
-  .then(acts => {
+
+];
+
+
+// ========================================
+// DISPLAY DASHBOARD
+// ========================================
+
+function displayActs() {
+
+    if (!dashboard) {
+
+        console.error(
+            "Dashboard container #dashboard was not found."
+        );
+
+        return;
+    }
+
 
     dashboard.innerHTML = "";
 
-    // Load all Acts automatically
-    acts.forEach(act => {
 
-      dashboard.innerHTML += `
-        <div class="dashboard-card"
-             onclick="location.href='search.html?file=${act.file}'">
+    lawDatabases.forEach((law) => {
 
-            <div class="icon">${act.icon}</div>
 
-            <h2>${act.name}</h2>
+        const card =
+            document.createElement("div");
 
-            <p>Open Act</p>
 
-        </div>
-      `;
+        card.className =
+            "modern-law-card";
+
+
+        card.innerHTML = `
+
+            <div class="law-card-top">
+
+                <div class="law-icon">
+                    ${law.icon}
+                </div>
+
+                <span class="law-arrow">
+                    →
+                </span>
+
+            </div>
+
+
+            <div class="law-card-content">
+
+                <p class="law-type">
+                    GHANA LAW
+                </p>
+
+                <h3>
+                    ${law.title}
+                </h3>
+
+                <p class="law-subtitle">
+                    ${law.subtitle}
+                </p>
+
+                <p class="law-action">
+                    Open Act →
+                </p>
+
+            </div>
+
+        `;
+
+
+        // =================================
+        // OPEN LAW
+        // =================================
+
+        card.addEventListener(
+            "click",
+            function () {
+
+                window.location.href =
+                    "search.html?file=" +
+                    encodeURIComponent(
+                        law.file
+                    );
+
+            }
+        );
+
+
+        dashboard.appendChild(card);
 
     });
 
-    // AI Assistant
-    dashboard.innerHTML += `
-      <div class="dashboard-card"
-           onclick="location.href='ai.html'">
+}
 
-          <div class="icon">🤖</div>
 
-          <h2>AI Assistant</h2>
+// ========================================
+// SEARCH BOX
+// ========================================
 
-          <p>Ask Legal Questions</p>
+const searchInput =
+    document.getElementById(
+        "searchInput"
+    );
 
-      </div>
-    `;
 
-    // Bookmarks
-    dashboard.innerHTML += `
-      <div class="dashboard-card"
-           onclick="location.href='bookmark.html'">
+const globalSearchBtn =
+    document.getElementById(
+        "globalSearchBtn"
+    );
 
-          <div class="icon">⭐</div>
 
-          <h2>Bookmarks</h2>
+function performDashboardSearch() {
 
-          <p>Saved Laws</p>
+    if (!searchInput) {
+        return;
+    }
 
-      </div>
-    `;
 
-    // Global Search
-    dashboard.innerHTML += `
-      <div class="dashboard-card"
-           onclick="location.href='global-search.html'">
+    const query =
+        searchInput.value.trim();
 
-          <div class="icon">🔍</div>
 
-          <h2>Search All Laws</h2>
+    if (!query) {
 
-          <p>Find any law instantly</p>
+        searchInput.focus();
 
-      </div>
-    `;
+        return;
+    }
 
-    // Settings
-    dashboard.innerHTML += `
-      <div class="dashboard-card"
-           onclick="location.href='settings.html'">
 
-          <div class="icon">⚙️</div>
+    window.location.href =
+        "global-search.html?q=" +
+        encodeURIComponent(query);
 
-          <h2>Settings</h2>
+}
 
-          <p>Application Settings</p>
 
-      </div>
-    `;
+// ========================================
+// SEARCH BUTTON
+// ========================================
 
-  })
-  .catch(error => {
+if (globalSearchBtn) {
 
-    console.error(error);
+    globalSearchBtn.addEventListener(
+        "click",
+        performDashboardSearch
+    );
 
-    dashboard.innerHTML = `
-      <div style="padding:40px;text-align:center;">
-        <h2>Unable to load Acts.</h2>
-        <p>${error.message}</p>
-      </div>
-    `;
+}
 
-  });
+
+// ========================================
+// ENTER KEY SEARCH
+// ========================================
+
+if (searchInput) {
+
+    searchInput.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Enter"
+            ) {
+
+                event.preventDefault();
+
+                performDashboardSearch();
+
+            }
+
+        }
+    );
+
+}
+
+
+// ========================================
+// START DASHBOARD
+// ========================================
+
+displayActs();
